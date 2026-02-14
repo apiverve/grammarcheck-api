@@ -1,23 +1,27 @@
 openapi: 3.0.4
 info:
   title: Grammar Check
-  description: Grammar Check is a simple tool for checking the grammar and spelling of a text. It returns the corrected text.
+  description: >-
+    Grammar Check is a simple tool for checking the grammar and spelling of a
+    text. It returns the corrected text.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/grammarcheck:
     post:
       summary: Check Grammar and Spelling
-      description: Grammar Check is a simple tool for checking the grammar and spelling of a text. It returns the corrected text.
+      description: >-
+        Grammar Check is a simple tool for checking the grammar and spelling of
+        a text. It returns the corrected text.
       operationId: grammarcheck
       parameters: []
       responses:
@@ -35,20 +39,22 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   modified: true
-                  text: The pig snorted when I saw it on the barn gate. I Was a little mad because it woke up my puppy.
+                  text: >-
+                    The pig snorted when I saw it on the barn gate. I Was a
+                    little mad because it woke up my puppy.
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
       requestBody:
         required: true
         content:
@@ -58,12 +64,11 @@ paths:
               properties:
                 text:
                   type: string
-                  description: The text you want to check for grammatical and spelling errors
-                  example: The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy
+                  description: >-
+                    The text you want to check for grammatical and spelling
+                    errors
               required:
-              - text
-              example:
-                text: The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy
+                - text
 components:
   securitySchemes:
     api_key:
@@ -71,4 +76,8 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
+sampleRequest:
+  text: >-
+    The the pig snorted when I saw it on the barn gate. I was a little mad
+    becuase it woke up my pupppppy
