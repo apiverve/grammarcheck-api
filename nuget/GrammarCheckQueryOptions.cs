@@ -12,7 +12,6 @@ namespace APIVerve.API.GrammarCheck
     {
         /// <summary>
         /// The text you want to check for grammatical and spelling errors
-        /// Example: This is a sample text with a grammatical error.
         /// </summary>
         [JsonProperty("text")]
         public string Text { get; set; }
