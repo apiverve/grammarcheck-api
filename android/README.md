@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:grammarcheck-api:1.1.13'
+    implementation 'com.github.apiverve:grammarcheck-api:1.1.14'
 }
 ```
 
@@ -47,7 +47,7 @@ GrammarCheckAPIClient client = new GrammarCheckAPIClient("YOUR_API_KEY");
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("text", "This is a sample text with a grammatical error.");
+    parameters.put("text", "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy");
 
     // Execute the request
     APIResponse response = client.execute(parameters);
