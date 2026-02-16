@@ -217,8 +217,9 @@ from apiverve_grammarcheck.apiClient import GrammarcheckAPIClient
 
 api = GrammarcheckAPIClient("[YOUR_API_KEY]")
 
+query = { "text": "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy" }
+
 try:
-    query = { "text": "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy" }
     result = api.execute(query)
     print(result)
 finally:
