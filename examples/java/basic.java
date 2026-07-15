@@ -12,8 +12,12 @@ public class BasicExample {
         GrammarCheckAPIClient client = new GrammarCheckAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Execute the API request (no parameters required)
-            APIResponse response = client.execute(null);
+            // Request body
+            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
+        parameters.put(&quot;text&quot;, &quot;The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy&quot;);
+
+            // Execute the API request
+            APIResponse response = client.execute(parameters);
 
             // Check if the request was successful
             if (response.isSuccess()) {
