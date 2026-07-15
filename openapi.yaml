@@ -46,9 +46,32 @@ paths:
                 error: null
                 data:
                   modified: true
-                  text: >-
-                    The pig snorted when I saw it on the barn gate. I Was a
-                    little mad because it woke up my puppy.
+                  corrected: >-
+                    The pig snorted when I saw it on the barn gate. I was a
+                    little mad because it woke up my puppy
+                  errorCount: 3
+                  corrections:
+                    - rule: repeated_word
+                      message: Did you mean to repeat the word "The"?
+                      position:
+                        start: 0
+                        end: 7
+                      suggestions:
+                        - The
+                    - rule: spelling
+                      message: Did you mean "because"?
+                      position:
+                        start: 67
+                        end: 74
+                      suggestions:
+                        - because
+                    - rule: spelling
+                      message: Did you mean "puppy"?
+                      position:
+                        start: 92
+                        end: 101
+                      suggestions:
+                        - puppy
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
