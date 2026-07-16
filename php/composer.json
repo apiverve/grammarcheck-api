@@ -1,0 +1,49 @@
+{
+    "name": "apiverve/grammarcheck",
+    "description": "Grammar Check is a simple tool for checking the grammar and spelling of a text. It returns the corrected text.",
+    "version": "1.2.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "APIVerve",
+            "email": "hello@apiverve.com",
+            "homepage": "https://apiverve.com"
+        }
+    ],
+    "keywords": [
+        "api",
+        "apiverve",
+        "grammarcheck",
+        "grammar check",
+        "grammar checker",
+        "grammar check api",
+        "grammar check tool",
+        "grammar check software"
+    ],
+    "homepage": "https://apiverve.com/marketplace/grammarcheck?utm_source=php&utm_medium=homepage",
+    "support": {
+        "email": "hello@apiverve.com",
+        "docs": "https://docs.apiverve.com/ref/grammarcheck",
+        "source": "https://github.com/apiverve/grammarcheck-API/tree/main/php"
+    },
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "APIVerve\\Grammarcheck\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "APIVerve\\Grammarcheck\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
