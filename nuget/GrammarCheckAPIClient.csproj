@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net20;net35;net40;net45;netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
+    <TargetFrameworks>net20;net35;net40;net45;netstandard2.0;netstandard2.1;net6.0;net8.0</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>GrammarCheck</Title>
-    <Version>1.1.14</Version>
+    <Version>1.2.0</Version>
     <Authors>APIVerve</Authors>
     <Company>APIVerve</Company>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -17,7 +17,7 @@
     <Description>Grammar Check is a simple tool for checking the grammar and spelling of a text. It returns the corrected text.</Description>
     <RepositoryUrl>https://github.com/apiverve/grammarcheck-api</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>api;rest;http;client;apiverve;wrapper;sdk;api;rest;http;client;apiverve;wrapper;sdk</PackageTags>
+    <PackageTags>grammar check;grammar checker;grammar check api;grammar check tool;grammar check software;api;rest;http;client;apiverve;wrapper;sdk</PackageTags>
     <Copyright>©2026 APIVerve. All Rights Reserved</Copyright>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <PackageIcon>favicon@128.png</PackageIcon>
