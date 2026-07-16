@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.GrammarCheck;
 
 class Program
 {
@@ -60,7 +60,7 @@ class Program
         // Initialize the API client
         var apiClient = new GrammarCheckAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new GrammarCheckQueryOptions {
     text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
 };
 
@@ -116,7 +116,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.GrammarCheck;
 
 public class Example
 {
@@ -124,7 +124,7 @@ public class Example
     {
         var apiClient = new GrammarCheckAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new GrammarCheckQueryOptions {
     text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
 };
 
@@ -148,7 +148,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.GrammarCheck;
 
 public class Example
 {
@@ -156,7 +156,7 @@ public class Example
     {
         var apiClient = new GrammarCheckAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new GrammarCheckQueryOptions {
     text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
 };
 
@@ -185,7 +185,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.GrammarCheck;
 
 public class Example
 {
@@ -193,7 +193,7 @@ public class Example
     {
         var apiClient = new GrammarCheckAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new GrammarCheckQueryOptions {
     text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
 };
 
@@ -237,7 +237,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.GrammarCheck;
 
 public class Example
 {
@@ -249,7 +249,7 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
+        var queryOptions = new GrammarCheckQueryOptions {
     text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
 };
 
@@ -290,7 +290,7 @@ var apiClient = new GrammarCheckAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
+var queryOptions = new GrammarCheckQueryOptions {
     text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
 };
 
@@ -316,7 +316,7 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
+var queryOptions = new GrammarCheckQueryOptions {
     text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
 };
 
@@ -334,7 +334,7 @@ var apiClient = new GrammarCheckAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
+var queryOptions = new GrammarCheckQueryOptions {
     text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
 };
 
@@ -346,7 +346,7 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
+var queryOptions = new GrammarCheckQueryOptions {
     text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
 };
 
@@ -368,7 +368,43 @@ using (var apiClient = new GrammarCheckAPIClient("[YOUR_API_KEY]"))
   "error": null,
   "data": {
     "modified": true,
-    "text": "The pig snorted when I saw it on the barn gate. I Was a little mad because it woke up my puppy."
+    "corrected": "The pig snorted when I saw it on the barn gate. I was a little mad because it woke up my puppy",
+    "errorCount": 3,
+    "corrections": [
+      {
+        "rule": "repeated_word",
+        "message": "Did you mean to repeat the word \"The\"?",
+        "position": {
+          "start": 0,
+          "end": 7
+        },
+        "suggestions": [
+          "The"
+        ]
+      },
+      {
+        "rule": "spelling",
+        "message": "Did you mean \"because\"?",
+        "position": {
+          "start": 67,
+          "end": 74
+        },
+        "suggestions": [
+          "because"
+        ]
+      },
+      {
+        "rule": "spelling",
+        "message": "Did you mean \"puppy\"?",
+        "position": {
+          "start": 92,
+          "end": 101
+        },
+        "suggestions": [
+          "puppy"
+        ]
+      }
+    ]
   }
 }
 ```
