@@ -25,14 +25,59 @@ namespace APIVerve.API.GrammarCheck
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("modified")]
-        public bool Modified { get; set; }
+        public bool? Modified { get; set; }
 
-        [JsonProperty("text")]
-        public string Text { get; set; }
+        [JsonProperty("corrected")]
+        public string Corrected { get; set; }
+
+        [JsonProperty("errorCount")]
+        public long? ErrorCount { get; set; }
+
+        [JsonProperty("corrections")]
+        public Correction[] Corrections { get; set; }
+    }
+
+    public partial class Correction
+    {
+        [JsonProperty("rule")]
+        public string Rule { get; set; }
+
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("position")]
+        public Position Position { get; set; }
+
+        [JsonProperty("suggestions")]
+        public string[] Suggestions { get; set; }
+    }
+
+    public partial class Position
+    {
+        [JsonProperty("start")]
+        public long? Start { get; set; }
+
+        [JsonProperty("end")]
+        public long? End { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
