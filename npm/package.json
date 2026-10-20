@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/grammarcheck",
-  "version": "1.2.0",
-  "description": "Grammar Check is a simple tool for checking the grammar and spelling of a text. It returns the corrected text.",
+  "version": "1.2.2",
+  "description": "Grammar Check is a grammar checker and spell check API that inspects text for spelling and grammar errors, returning the corrected wording, error count, and a modified flag. Paid plans add detailed rule descriptions, character offsets, and suggestions for every detected mistake.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "grammar check", "grammar checker", "grammar check api", "grammar check tool", "grammar check software"
+    "grammar check api", "grammar checker api", "spell check api", "spell check", "check spelling and grammar"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/grammarcheck-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/grammarcheck?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/grammarcheck?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
