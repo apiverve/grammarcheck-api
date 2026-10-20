@@ -1,13 +1,12 @@
 Grammar Check API
 ============
 
-Grammar Check is a simple tool for checking the grammar and spelling of a text. It returns the corrected text.
+Grammar Check is a grammar checker and spell check API that inspects text for spelling and grammar errors, returning the corrected wording, error count, and a modified flag. Paid plans add detailed rule descriptions, character offsets, and suggestions for every detected mistake.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Grammar Check API](https://apiverve.com/marketplace/grammarcheck?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-grammarcheck.svg)](https://pypi.org/project/apiverve-grammarcheck/)
+
+This is a Python wrapper for the [Grammar Check API](https://apiverve.com/marketplace/grammarcheck?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-grammarcheck
 
 ## Configuration
 
-Before using the grammarcheck API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Grammar Check API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -60,7 +59,7 @@ except Exception as e:
 
 ## Usage
 
-The Grammar Check API documentation is found here: [https://docs.apiverve.com/ref/grammarcheck](https://docs.apiverve.com/ref/grammarcheck?utm_source=pypi&utm_medium=readme).
+The Grammar Check API documentation is found here: [https://docs.apiverve.com/ref/grammarcheck](https://docs.apiverve.com/ref/grammarcheck?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -103,7 +102,43 @@ print(result)
   "error": null,
   "data": {
     "modified": true,
-    "text": "The pig snorted when I saw it on the barn gate. I Was a little mad because it woke up my puppy."
+    "corrected": "The pig snorted when I saw it on the barn gate. I was a little mad because it woke up my puppy",
+    "errorCount": 3,
+    "corrections": [
+      {
+        "rule": "repeated_word",
+        "message": "Did you mean to repeat the word \"The\"?",
+        "position": {
+          "start": 0,
+          "end": 7
+        },
+        "suggestions": [
+          "The"
+        ]
+      },
+      {
+        "rule": "spelling",
+        "message": "Did you mean \"because\"?",
+        "position": {
+          "start": 67,
+          "end": 74
+        },
+        "suggestions": [
+          "because"
+        ]
+      },
+      {
+        "rule": "spelling",
+        "message": "Did you mean \"puppy\"?",
+        "position": {
+          "start": 92,
+          "end": 101
+        },
+        "suggestions": [
+          "puppy"
+        ]
+      }
+    ]
   }
 }
 ```
@@ -231,7 +266,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -242,12 +277,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
