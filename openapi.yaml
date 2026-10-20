@@ -2,8 +2,10 @@ openapi: 3.0.4
 info:
   title: Grammar Check
   description: >-
-    Grammar Check is a simple tool for checking the grammar and spelling of a
-    text. It returns the corrected text.
+    Grammar Check is a grammar checker and spell check API that inspects text
+    for spelling and grammar errors, returning the corrected wording, error
+    count, and a modified flag. Paid plans add detailed rule descriptions,
+    character offsets, and suggestions for every detected mistake.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +20,7 @@ servers:
 paths:
   /v1/grammarcheck:
     post:
-      summary: Check Grammar and Spelling
+      summary: Grammar Check
       description: >-
         Grammar Check is a simple tool for checking the grammar and spelling of
         a text. It returns the corrected text.

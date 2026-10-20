@@ -1,13 +1,13 @@
-# [Grammar Check API](https://apiverve.com/marketplace/grammarcheck?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Grammar Check API](https://apiverve.com/marketplace/grammarcheck?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Grammar Check is a simple tool for checking the grammar and spelling of a text. It returns the corrected text.
+Grammar Check is a grammar checker and spell check API that inspects text for spelling and grammar errors, returning the corrected wording, error count, and a modified flag. Paid plans add detailed rule descriptions, character offsets, and suggestions for every detected mistake.
 
 The Grammar Check API provides a simple, reliable way to integrate grammar check functionality into your applications. Built for developers who need production-ready grammar check capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/grammarcheck?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/grammarcheck?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/grammarcheck?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/grammarcheck?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -167,7 +167,7 @@ go get github.com/apiverve/grammarcheck-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Grammar Check API](https://apiverve.com/marketplace/grammarcheck?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Grammar Check API](https://apiverve.com/marketplace/grammarcheck?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/grammarcheck](https://docs.apiverve.com/ref/grammarcheck)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -197,11 +197,65 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Grammar Check API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "modified": true,
+    "corrected": "The pig snorted when I saw it on the barn gate. I was a little mad because it woke up my puppy",
+    "errorCount": 3,
+    "corrections": [
+      {
+        "rule": "repeated_word",
+        "message": "Did you mean to repeat the word \"The\"?",
+        "position": {
+          "start": 0,
+          "end": 7
+        },
+        "suggestions": [
+          "The"
+        ]
+      },
+      {
+        "rule": "spelling",
+        "message": "Did you mean \"because\"?",
+        "position": {
+          "start": 67,
+          "end": 74
+        },
+        "suggestions": [
+          "because"
+        ]
+      },
+      {
+        "rule": "spelling",
+        "message": "Did you mean \"puppy\"?",
+        "position": {
+          "start": 92,
+          "end": 101
+        },
+        "suggestions": [
+          "puppy"
+        ]
+      }
+    ]
+  }
 }
 ```
 
@@ -209,7 +263,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Grammar Check API](https://apiverve.com/marketplace/grammarcheck?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Grammar Check API](https://apiverve.com/marketplace/grammarcheck?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
