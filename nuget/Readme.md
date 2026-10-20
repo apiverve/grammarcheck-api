@@ -1,13 +1,12 @@
-GrammarCheck API
+Grammar Check API
 ============
 
-Grammar Check is a simple tool for checking the grammar and spelling of a text. It returns the corrected text.
+Grammar Check is a grammar checker and spell check API that inspects text for spelling and grammar errors, returning the corrected wording, error count, and a modified flag. Paid plans add detailed rule descriptions, character offsets, and suggestions for every detected mistake.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [GrammarCheck API](https://apiverve.com/marketplace/grammarcheck?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.GrammarCheck.svg)](https://www.nuget.org/packages/APIVerve.API.GrammarCheck)
+
+This is a .NET wrapper for the [Grammar Check API](https://apiverve.com/marketplace/grammarcheck?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the grammarcheck API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the Grammar Check API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,8 +60,8 @@ class Program
         var apiClient = new GrammarCheckAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new GrammarCheckQueryOptions {
-    text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
-};
+            Text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
+        };
 
         // Make the API call
         try
@@ -92,13 +91,13 @@ class Program
 
 ## Usage
 
-The GrammarCheck API documentation is found here: [https://docs.apiverve.com/ref/grammarcheck](https://docs.apiverve.com/ref/grammarcheck?utm_source=nuget&utm_medium=readme).
+The Grammar Check API documentation is found here: [https://docs.apiverve.com/ref/grammarcheck](https://docs.apiverve.com/ref/grammarcheck?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-GrammarCheck API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+Grammar Check API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -125,8 +124,8 @@ public class Example
         var apiClient = new GrammarCheckAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new GrammarCheckQueryOptions {
-    text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
-};
+            Text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -157,8 +156,8 @@ public class Example
         var apiClient = new GrammarCheckAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new GrammarCheckQueryOptions {
-    text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
-};
+            Text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -194,8 +193,8 @@ public class Example
         var apiClient = new GrammarCheckAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new GrammarCheckQueryOptions {
-    text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
-};
+            Text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
+        };
 
         try
         {
@@ -250,8 +249,8 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new GrammarCheckQueryOptions {
-    text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
-};
+            Text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
+        };
 
         try
         {
@@ -291,7 +290,7 @@ apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new GrammarCheckQueryOptions {
-    text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
+    Text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -317,7 +316,7 @@ apiClient.SetLogger(message =>
 });
 
 var queryOptions = new GrammarCheckQueryOptions {
-    text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
+    Text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -335,7 +334,7 @@ apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
 var queryOptions = new GrammarCheckQueryOptions {
-    text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
+    Text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -347,7 +346,7 @@ The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
 var queryOptions = new GrammarCheckQueryOptions {
-    text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
+    Text = "The the pig snorted when I saw it on the barn gate. I was a little mad becuase it woke up my pupppppy"
 };
 
 using (var apiClient = new GrammarCheckAPIClient("[YOUR_API_KEY]"))
@@ -413,7 +412,7 @@ using (var apiClient = new GrammarCheckAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -424,12 +423,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
