@@ -1,6 +1,6 @@
 # Grammar Check API - PHP Package
 
-Grammar Check is a simple tool for checking the grammar and spelling of a text. It returns the corrected text.
+Grammar Check is a grammar checker and spell check API that inspects text for spelling and grammar errors, returning the corrected wording, error count, and a modified flag. Paid plans add detailed rule descriptions, character offsets, and suggestions for every detected mistake.
 
 ## Installation
 
@@ -118,11 +118,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/grammarcheck?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/grammarcheck?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://apiverve.com/marketplace/grammarcheck?utm_source=php&utm_medium=readme](https://apiverve.com/marketplace/grammarcheck?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/grammarcheck?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/grammarcheck?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License
