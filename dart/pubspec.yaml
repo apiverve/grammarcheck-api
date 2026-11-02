@@ -1,7 +1,7 @@
 name: apiverve_grammarcheck
-description: Grammar Check is a simple tool for checking the grammar and spelling of a text. It returns the corrected text.
-version: 1.1.14
-homepage: https://apiverve.com/marketplace/grammarcheck?utm_source=dart&utm_medium=homepage
+description: "Grammar Check is a grammar checker and spell check API that inspects text for spelling and grammar errors, returning the corrected wording, error count, and a modified flag. Paid plans add detailed rule descriptions, character offsets, and suggestions for every detected mistake."
+version: 1.2.4
+homepage: https://apiverve.com/marketplace/grammarcheck?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/grammarcheck-api/tree/main/dart
 
 environment:

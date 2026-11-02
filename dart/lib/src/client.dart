@@ -46,10 +46,10 @@ final _formatPatterns = {
 
 /// Grammar Check API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/grammarcheck?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/grammarcheck?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
-/// * [text] (required) - The text you want to check for grammatical and spelling errors
+/// * [text] (required) - The text you want to check for grammatical and spelling errors [maxLength: 50000]
 class GrammarcheckClient {
   final String apiKey;
   final String baseUrl;
@@ -57,7 +57,7 @@ class GrammarcheckClient {
 
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
-    'text': ValidationRule(type: 'string', required: true),
+    'text': ValidationRule(type: 'string', required: true, maxLength: 50000),
   };
 
   GrammarcheckClient(this.apiKey, {
