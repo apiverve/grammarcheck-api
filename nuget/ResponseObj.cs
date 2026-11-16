@@ -41,6 +41,9 @@ namespace APIVerve.API.GrammarCheck
         [JsonProperty("errorCount")]
         public long? ErrorCount { get; set; }
 
+        [JsonProperty("dialect")]
+        public string Dialect { get; set; }
+
         [JsonProperty("corrections")]
         public Correction[] Corrections { get; set; }
     }
