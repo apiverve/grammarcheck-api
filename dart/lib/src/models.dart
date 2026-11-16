@@ -59,12 +59,14 @@ class GrammarcheckData {
   bool? modified;
   String? corrected;
   num? errorCount;
+  String? dialect;
   List<GrammarcheckDataCorrectionsItem>? corrections;
 
   GrammarcheckData({
     this.modified,
     this.corrected,
     this.errorCount,
+    this.dialect,
     this.corrections,
   });
 
@@ -72,6 +74,7 @@ class GrammarcheckData {
       modified: json['modified'],
       corrected: json['corrected'],
       errorCount: json['errorCount'],
+      dialect: json['dialect'],
       corrections: (json['corrections'] as List?)?.map((e) => GrammarcheckDataCorrectionsItem.fromJson(e)).toList(),
     );
 }
