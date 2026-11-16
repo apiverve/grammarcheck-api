@@ -28,6 +28,7 @@ declare module '@apiverve/grammarcheck' {
       modified:    boolean | null;
       corrected:   null | string;
       errorCount:  number | null;
+      dialect:     null | string;
       corrections: Correction[];
   }
   
