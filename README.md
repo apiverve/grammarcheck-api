@@ -220,10 +220,11 @@ A real response from the Grammar Check API:
     "modified": true,
     "corrected": "The pig snorted when I saw it on the barn gate. I was a little mad because it woke up my puppy",
     "errorCount": 3,
+    "dialect": "American",
     "corrections": [
       {
-        "rule": "repeated_word",
-        "message": "Did you mean to repeat the word \"The\"?",
+        "rule": "Repetition",
+        "message": "Did you mean to repeat this word?",
         "position": {
           "start": 0,
           "end": 7
@@ -233,25 +234,26 @@ A real response from the Grammar Check API:
         ]
       },
       {
-        "rule": "spelling",
-        "message": "Did you mean \"because\"?",
+        "rule": "Spelling",
+        "message": "Did you mean `because`?",
         "position": {
-          "start": 67,
-          "end": 74
+          "start": 71,
+          "end": 78
         },
         "suggestions": [
           "because"
         ]
       },
       {
-        "rule": "spelling",
-        "message": "Did you mean \"puppy\"?",
+        "rule": "Spelling",
+        "message": "Did you mean `puppy`?",
         "position": {
-          "start": 92,
+          "start": 93,
           "end": 101
         },
         "suggestions": [
-          "puppy"
+          "puppy",
+          "puppetry"
         ]
       }
     ]
